@@ -17,8 +17,8 @@ class Resolution:
         changed_picture = self.__make_empty_picture(
             (new_picture_width, new_picture_height))
         surounding_pixels = [(0, 0) for value in range(9)]
-        for x in range(how_many_times_to_enlarge, new_picture_width - 2 * how_many_times_to_enlarge):
-            for y in range(how_many_times_to_enlarge, new_picture_height - 2 * how_many_times_to_enlarge):
+        for x in range(2 * how_many_times_to_enlarge, new_picture_width - 2 * how_many_times_to_enlarge):
+            for y in range(2 * how_many_times_to_enlarge, new_picture_height - 2 * how_many_times_to_enlarge):
                 try:
                     picture_coordinate_x = round(x/how_many_times_to_enlarge)
                     picture_coordinate_y = round(y/how_many_times_to_enlarge)
@@ -45,7 +45,7 @@ class Resolution:
                     median_pixel = self.__calculate_median_pixel(surounding_pixels)
                     changed_picture.putpixel((x, y), median_pixel)
                 except:
-                    print(picture_coordinate_x, picture_coordinate_y)
+                    pass
 
         return changed_picture
 
