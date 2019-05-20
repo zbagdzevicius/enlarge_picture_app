@@ -1,21 +1,18 @@
 <FileChooser>:
     BoxLayout:
         orientation: 'vertical'
-        BoxLayout:
+        Label:
             size_hint: 1, .2
-            Label:
-                font_size: 20
-                text: 'pasirinkite norima nuotrauka'
-        BoxLayout:
-            FileChooserIconView:
-                id: chosen_object
-                rootpath: './'
-        BoxLayout:
+            font_size: 20
+            text: 'pasirinkite norima nuotrauka'
+        FileChooserIconView:
+            id: chosen_object
+            rootpath: './'
+        Button:
             size_hint: 1, .2
-            Button:
-                font_size: 20
-                text: "Pasirinkti"
-                on_release: root.load_picture(chosen_object.selection)
+            font_size: 20
+            text: "Pasirinkti"
+            on_release: root.load_picture(chosen_object.selection)
 
 
 <Enlarge>:
@@ -37,8 +34,7 @@
                 size_hint: 5, 1
                 text: "Didinti"
                 on_release: root.enlarge(user_input.text)
-        BoxLayout:
+        Button:
             size_hint: 1, .15
-            Button:
-                text: "Rinktis kita nuotrauka"
-                on_release: root.dismiss()
+            text: "Rinktis kita nuotrauka"
+            on_release: root.dismiss()
