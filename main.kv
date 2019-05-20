@@ -14,7 +14,7 @@
             size_hint: 1, .2
             Button:
                 font_size: 20
-                text: "Užkrauti"
+                text: "Pasirinkti"
                 on_release: root.load_picture(chosen_object.selection)
 
 
@@ -22,10 +22,9 @@
     picture_to_display: picture_to_display
     BoxLayout:
         orientation: 'vertical'
-        BoxLayout:
-            Image:
-                id: picture_to_display
-                allow_stretch: True
+        Image:
+            id: picture_to_display
+            allow_stretch: True
         BoxLayout:
             size_hint: 1, .15
             TextInput:
